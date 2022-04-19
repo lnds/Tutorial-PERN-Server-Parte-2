@@ -318,7 +318,23 @@ $ curl http://localhost:3001/todos -H 'token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVC
 
 [{"id":1,"description":"hola mundo"},{"id":2,"description":"preparar presentación para la clase 4"},{"id":6,"description":"aaaaa"},{"id":7,"description":"probando"},{"id":8,"description":"holaaa"},{"id":9,"description":"leer"},{"id":10,"description":""},{"id":11,"description":"leer"},{"id":12,"description":"leer"},{"id":13,"description":"uwu"},{"id":14,"description":"hola"}]
  ```
- 
+
+ ## Is verify
+
+ Agregaremos un último endpoint que puede ser usado por el frontend para validar el token
+
+ ```javascript
+ app.get("/verify", authorization, async (req, res) => {
+    try {
+        res.json(true)
+    } catch (err) {
+        console.error(err.message)
+        res.status(500).send("Server error")
+    }
+})
+```
+
+
 
 
 (c) 2022 Eduardo Díaz
