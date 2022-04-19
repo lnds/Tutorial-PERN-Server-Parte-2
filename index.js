@@ -4,7 +4,7 @@ const app = express()
 const cors = require("cors")
 const pool = require("./db")
 
-const PORT = process.env.SERVER_PORT
+const { PORT } = require('./config')
 
 //middleware
 app.use(cors())
@@ -85,5 +85,5 @@ app.delete("/todos/:id", async (req, res) => {
 })
 
 app.listen(PORT, () => {
-	console.log("servidor iniciado en puerto " + PORT)
+    console.log("servidor iniciado en puerto " + PORT)
 })
