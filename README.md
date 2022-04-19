@@ -110,6 +110,9 @@ Ahora agregaremos estas tres funciones en `index.js`:
 
 const jwt = require("jsonwebtoken")
 
+
+const jwtSecret = JWT_SECRET
+
 const jwtGenerator = (userId) => {
     // genera un token jwt para el usuario dado
     if (userId) {
